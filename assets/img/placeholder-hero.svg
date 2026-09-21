@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1125" role="img" aria-label="Espaço reservado para foto de Gabriel Cruz em contexto de viagem">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2b2a22"/>
+      <stop offset="55%" stop-color="#17160f"/>
+      <stop offset="100%" stop-color="#0d0c08"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#b8874a" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#b8874a" stop-opacity="0.22"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.035 0"/>
+      <feComposite operator="over" in2="SourceGraphic"/>
+    </filter>
+  </defs>
+  <rect width="900" height="1125" fill="url(#g1)"/>
+  <rect width="900" height="1125" fill="url(#g2)"/>
+  <g opacity="0.5" stroke="#b8874a" stroke-width="2" fill="none">
+    <path d="M120 760 L360 620 L520 700 L780 520" />
+    <circle cx="120" cy="760" r="5" fill="#b8874a" stroke="none"/>
+    <circle cx="360" cy="620" r="5" fill="#b8874a" stroke="none"/>
+    <circle cx="520" cy="700" r="5" fill="#b8874a" stroke="none"/>
+    <circle cx="780" cy="520" r="5" fill="#b8874a" stroke="none"/>
+  </g>
+  <rect width="900" height="1125" filter="url(#grain)" opacity="0.6"/>
+  <g fill="#f6f2ea" font-family="Inter, sans-serif">
+    <text x="60" y="1000" font-size="18" letter-spacing="3" opacity="0.55">FOTO — GABRIEL CRUZ</text>
+    <text x="60" y="1030" font-size="14" letter-spacing="2" opacity="0.4">SUBSTITUIR POR IMAGEM REAL · 900×1125</text>
+  </g>
+</svg>
