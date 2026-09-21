@@ -440,8 +440,8 @@ h2 { font-size: clamp(22px, 4vw, 38px); font-weight: 900; line-height: 1.1; lett
 .pp-card .pt { font-size: 12px; font-weight: 700; color: rgba(255, 255, 255, .75); text-align: center; padding: 12px 10px 8px; }
 .pp-card img { width: 100%; display: block; }
 @media (max-width: 480px) { .pp-grid { grid-template-columns: 1fr; } }
-.barca-card { border-radius: var(--r); overflow: hidden; position: relative; margin-top: 10px; }
-.barca-card img { width: 100%; display: block; }
+.barca-card { max-width: 360px; margin: 10px auto 0; border-radius: var(--r); overflow: hidden; position: relative; }
+.barca-card img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
 .barca-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0, 0, 0, .85), transparent); color: #fff; padding: 28px 18px 16px; font-size: 13px; font-weight: 700; }
 
 /* ═══ SOBRE (about) ═══ */
@@ -458,8 +458,8 @@ h2 { font-size: clamp(22px, 4vw, 38px); font-weight: 900; line-height: 1.1; lett
 .about-stat.wide { grid-column: span 2; }
 .astat-num { font-size: clamp(28px, 5vw, 42px); font-weight: 900; line-height: 1; margin-bottom: 6px; background: linear-gradient(90deg, #E91E8C, #FF8C00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 .astat-label { font-size: 13px; color: rgba(255, 255, 255, .65); }
-.about-photo { border-radius: var(--r); overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, .5); }
-.about-photo img { width: 100%; display: block; }
+.about-photo { max-width: 360px; margin: 0 auto; border-radius: var(--r); overflow: hidden; box-shadow: 0 8px 32px rgba(0, 0, 0, .5); }
+.about-photo img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
 
 /* ═══ GARANTIA ═══ */
 .gb { display: flex; align-items: center; gap: 24px; background: var(--white); border-radius: var(--r); padding: 28px; border: 1px solid var(--border); flex-wrap: wrap; margin-top: 24px; }
