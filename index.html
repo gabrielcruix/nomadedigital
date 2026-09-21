@@ -8,10 +8,13 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#F1EFEA;--white:#FFF;--ink:#0A0A0A;--soft:#545454;--muted:#8A8A85;
+  --bg:#FFFFFF;--white:#FFF;--ink:#0A0A0A;--soft:#545454;--muted:#8A8A85;
   --dark:#111;--dark2:#1A1A1A;
+  --darkgrad:linear-gradient(160deg,#132a1c 0%,#0a0a0a 62%);
   --green:#1E7A46;--gbright:#2E9E5B;
-  --border:rgba(0,0,0,0.09);--r:18px;--rs:12px;
+  --grad:linear-gradient(90deg,#2E9E5B,#1E7A46);
+  --border:rgba(0,0,0,0.07);--r:24px;--rs:18px;
+  --shadow:0 10px 34px rgba(0,0,0,.08);--shadowlg:0 24px 60px rgba(0,0,0,.4);
 }
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:var(--bg);background-image:radial-gradient(circle,rgba(0,0,0,.05) 1px,transparent 1px);background-size:22px 22px;color:var(--ink);line-height:1.6;font-size:16px}
@@ -68,8 +71,8 @@ nav img{height:34px;object-fit:contain}
 .photo-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,.75),transparent);color:#fff;padding:18px 10px 8px;font-size:10.5px;font-weight:700;letter-spacing:.3px}
 
 /* SECTIONS */
-section{padding:60px 24px;background-image:radial-gradient(circle,rgba(0,0,0,.05) 1px,transparent 1px);background-size:22px 22px}
-.wh{background:var(--white);background-image:none;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+section{padding:60px 24px;background:var(--white);background-image:radial-gradient(circle,rgba(0,0,0,.05) 1px,transparent 1px);background-size:22px 22px}
+.wh{background:var(--white)}
 .c{max-width:700px;margin:0 auto}
 .sl{display:flex;align-items:center;justify-content:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase;color:var(--green);margin-bottom:16px}
 .sl::before{content:'';width:16px;height:1px;background:var(--green)}
@@ -84,10 +87,10 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 .dor-wrap p em{color:var(--green);font-weight:600}
 .dor-quote{
   background:var(--white);border-radius:var(--rs);padding:26px 24px;
-  border-left:3px solid var(--green);margin:26px 0;
+  border-left:3px solid var(--green);margin:26px 0;box-shadow:var(--shadow);
   font-family:'Fraunces',serif;font-size:19px;font-style:italic;font-weight:500;color:var(--ink);line-height:1.5;
 }
-.dor-culpa{background:var(--dark);border-radius:var(--r);padding:30px 26px;margin:26px 0}
+.dor-culpa{background:var(--darkgrad);border-radius:var(--r);padding:30px 26px;margin:26px 0;box-shadow:var(--shadowlg)}
 .dor-culpa p{font-size:15px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:6px}
 .dor-culpa .big{font-size:18px;font-weight:800;color:#fff;margin-bottom:4px}
 .dor-culpa .green{color:#4ADE80;font-weight:700;font-size:16px;margin-top:14px}
@@ -98,32 +101,33 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 
 /* ═══ O CAMINHO ═══ */
 .path-list{display:flex;flex-direction:column;gap:14px;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto}
-.path-item{display:flex;align-items:flex-start;gap:18px;background:var(--white);border-radius:var(--r);padding:22px;border:1px solid var(--border)}
+.path-item{display:flex;align-items:flex-start;gap:18px;background:var(--white);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
 .path-num{font-family:'Fraunces',serif;font-size:15px;font-weight:600;color:var(--green);flex-shrink:0;margin-top:2px;min-width:22px}
 .path-item .ph{font-weight:800;color:var(--ink);font-size:15px;display:block;margin-bottom:5px}
 .path-item .pb{font-size:14px;color:var(--soft);line-height:1.65}
 
 /* ═══ O QUE MUDA ═══ */
-.result-grid{display:flex;flex-direction:column;gap:10px;margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto}
-.result-item{display:flex;align-items:flex-start;gap:16px;background:var(--dark2);border-radius:var(--rs);padding:19px 20px}
-.result-check{width:22px;height:22px;min-width:22px;border:1px solid rgba(255,255,255,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#4ADE80;flex-shrink:0;margin-top:1px}
-.result-item p{font-size:14px;color:rgba(255,255,255,.85);line-height:1.6}
-.result-item p strong{color:#fff;display:block;margin-bottom:2px;font-size:15px}
+.result-wrap{background:var(--darkgrad);border-radius:calc(var(--r) + 8px);padding:26px 16px;box-shadow:var(--shadowlg);margin-top:24px;max-width:600px;margin-left:auto;margin-right:auto}
+.result-grid{display:flex;flex-direction:column;gap:12px}
+.result-item{display:flex;align-items:flex-start;gap:14px;background:var(--white);border-radius:var(--rs);padding:19px 20px;box-shadow:var(--shadow)}
+.result-check{width:24px;height:24px;min-width:24px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;flex-shrink:0;margin-top:1px}
+.result-item p{font-size:14px;color:var(--soft);line-height:1.6}
+.result-item p strong{color:var(--ink);display:block;margin-bottom:2px;font-size:15px}
 
 /* ═══ PROVA (fotos reais do Gabriel) ═══ */
 .proof-list{display:flex;flex-direction:column;gap:14px;margin-top:24px}
-.proof-card{position:relative;border-radius:var(--r);overflow:hidden;background:#111}
+.proof-card{position:relative;border-radius:var(--r);overflow:hidden;background:#111;box-shadow:var(--shadow)}
 .proof-card img{width:100%;display:block;max-height:420px;object-fit:cover}
 .proof-cap{position:relative;background:rgba(0,0,0,.86);color:#fff;padding:14px 18px;font-size:13px;font-weight:600;line-height:1.5}
 .proof-cap span{display:block;color:rgba(255,255,255,.5);font-weight:500;font-size:12px;margin-top:2px}
 
 /* PARA QUEM */
-.paraquem-main{background:var(--dark2);border-radius:var(--r);padding:30px 26px;margin-bottom:14px}
+.paraquem-main{background:var(--darkgrad);border-radius:calc(var(--r) + 8px);padding:30px 26px;margin-bottom:14px;box-shadow:var(--shadowlg)}
 .paraquem-main h3{color:#fff;font-family:'Fraunces',serif;font-weight:600;font-size:19px;margin-bottom:18px;line-height:1.4}
 .paraquem-row{display:flex;align-items:flex-start;gap:12px;margin-bottom:11px}
 .paraquem-bullet{color:#4ADE80;font-size:14px;flex-shrink:0;line-height:1.6;margin-top:2px}
 .paraquem-row p{font-size:14px;color:rgba(255,255,255,.78);line-height:1.6}
-.pq-note{background:var(--white);border-radius:var(--r);padding:24px;border:1px solid var(--border)}
+.pq-note{background:var(--white);border-radius:var(--r);padding:24px;box-shadow:var(--shadow)}
 .pq-note p{font-size:14px;color:var(--soft);line-height:1.8;margin-bottom:8px}
 .pq-note p:last-child{margin-bottom:0}
 .pq-note p strong{color:var(--ink)}
@@ -134,13 +138,13 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 .carousel::-webkit-scrollbar{height:4px}
 .carousel::-webkit-scrollbar-track{background:rgba(0,0,0,.06);border-radius:99px}
 .carousel::-webkit-scrollbar-thumb{background:rgba(0,0,0,.18);border-radius:99px}
-.mod-slide{flex:0 0 250px;scroll-snap-align:start;background:var(--white);border-radius:var(--r);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+.mod-slide{flex:0 0 250px;scroll-snap-align:start;background:var(--white);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
 .mod-cover{width:100%;height:78px;background:var(--dark);display:flex;align-items:center;padding:0 18px;position:relative;overflow:hidden}
 .mod-cover::after{content:'';position:absolute;right:-20px;top:-20px;width:80px;height:80px;border-radius:50%;border:1px solid rgba(74,222,128,.25)}
 .mod-cover .n{font-family:'Fraunces',serif;font-size:34px;font-weight:600;color:rgba(255,255,255,.92)}
 .mod-cover .n span{color:#4ADE80}
 .mod-body{padding:16px;flex:1;display:flex;flex-direction:column}
-.ep{font-size:10px;font-weight:800;color:var(--green);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.ep{display:inline-block;font-size:10px;font-weight:800;color:#fff;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;background:var(--grad);padding:5px 12px;border-radius:99px}
 .mod-slide h3{font-size:13.5px;font-weight:800;margin-bottom:6px;line-height:1.35;color:var(--ink)}
 .mod-slide .desc{font-size:11.5px;color:var(--soft);line-height:1.55;margin-bottom:10px;flex:1}
 .rp{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
@@ -153,17 +157,18 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 .carousel-hint{text-align:center;font-size:11px;color:var(--muted);margin-top:8px}
 
 /* BÔNUS */
-.bonus-list{display:flex;flex-direction:column;gap:14px;margin-top:8px}
-.bonus-card{background:var(--dark2);border-radius:var(--r);overflow:hidden;display:flex;align-items:stretch}
-.bonus-mark{width:64px;min-width:64px;background:#111;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:15px;color:rgba(255,255,255,.35);border-right:1px solid rgba(255,255,255,.06)}
-.bonus-body{padding:20px 22px}
-.bonus-oldp{font-size:12px;color:rgba(255,255,255,.3);text-decoration:line-through;margin-bottom:8px}
-.bonus-badge{display:inline-block;border:1px solid rgba(74,222,128,.4);color:#4ADE80;font-size:10.5px;font-weight:700;padding:4px 12px;border-radius:99px;margin-bottom:12px;letter-spacing:.3px}
-.bonus-card h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:7px}
-.bonus-card p{font-size:13px;color:rgba(255,255,255,.62);line-height:1.6}
+.bonus-wrap{background:var(--darkgrad);border-radius:calc(var(--r) + 8px);padding:26px 16px;box-shadow:var(--shadowlg)}
+.bonus-list{display:flex;flex-direction:column;gap:16px}
+.bonus-card{position:relative;background:var(--white);border-radius:var(--r);overflow:visible;display:flex;align-items:stretch;box-shadow:var(--shadow);margin-top:14px}
+.bonus-mark{position:absolute;top:-14px;left:20px;width:38px;height:38px;min-width:38px;background:var(--grad);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-size:14px;font-weight:600;color:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.bonus-body{padding:26px 22px 20px}
+.bonus-oldp{font-size:12px;color:var(--muted);text-decoration:line-through;margin-bottom:8px}
+.bonus-badge{display:inline-block;background:var(--grad);color:#fff;font-size:10.5px;font-weight:700;padding:5px 13px;border-radius:99px;margin-bottom:12px;letter-spacing:.3px}
+.bonus-card h3{font-size:15px;font-weight:800;color:var(--ink);margin-bottom:7px}
+.bonus-card p{font-size:13px;color:var(--soft);line-height:1.6}
 
 /* TABELA + PREÇO */
-.vt{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);margin-top:24px;background:var(--white)}
+.vt{border-radius:var(--r);overflow:hidden;margin-top:24px;background:var(--white);box-shadow:var(--shadow)}
 .vt-head{display:flex;justify-content:space-between;padding:11px 18px;background:var(--bg);font-size:10px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
 .vr{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-top:1px solid var(--border);gap:10px}
 .vr.total{background:var(--dark);border-top:none;border-radius:0 0 var(--r) var(--r)}
@@ -171,7 +176,7 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 .vp{font-size:13px;font-weight:800;color:var(--ink);text-decoration:line-through;opacity:.4;white-space:nowrap}
 .vr.total .vn{color:#fff;font-weight:800;font-size:14px}
 .vr.total .vp{color:rgba(255,255,255,.4)}
-.price-wrap{background:var(--white);border-radius:var(--r);padding:34px 26px;max-width:480px;margin:0 auto;box-shadow:0 4px 32px rgba(0,0,0,.07);text-align:center;border:1px solid var(--border)}
+.price-wrap{background:var(--white);border-radius:var(--r);padding:34px 26px;max-width:480px;margin:0 auto;box-shadow:var(--shadowlg);text-align:center}
 .price-pre{font-size:13px;color:var(--muted);margin-bottom:18px;line-height:1.65}
 .price-parc{font-size:16px;color:var(--soft);margin-bottom:2px}
 .price-num{font-family:'Fraunces',serif;font-size:56px;font-weight:600;line-height:1;color:var(--ink);letter-spacing:-1px;margin:4px 0}
@@ -181,7 +186,7 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 .price-note{font-size:11px;color:var(--muted);margin-top:12px}
 
 /* ABOUT */
-.about-section{padding:64px 24px;background:var(--dark);background-image:none}
+.about-section{padding:64px 24px;background:var(--darkgrad)}
 .about-c{max-width:700px;margin:0 auto}
 .about-eyebrow{font-size:12.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#4ADE80;margin-bottom:16px}
 .about-title{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,34px);font-weight:600;color:#FFF;line-height:1.15;margin-bottom:10px}
@@ -195,7 +200,7 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 .about-photo img{width:100%;display:block}
 
 /* GARANTIA */
-.gb{display:flex;align-items:center;gap:26px;background:var(--white);border-radius:var(--r);padding:30px;border:1px solid var(--border);flex-wrap:wrap;margin-top:24px}
+.gb{display:flex;align-items:center;gap:26px;background:var(--white);border-radius:var(--r);padding:30px;box-shadow:var(--shadow);flex-wrap:wrap;margin-top:24px}
 .gc{width:84px;min-width:84px;height:84px;background:var(--dark);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .gd{font-family:'Fraunces',serif;font-size:26px;font-weight:600;color:#4ADE80;line-height:1}
 .gs{font-size:8px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1px;text-transform:uppercase;margin-top:2px}
@@ -205,14 +210,14 @@ h2{font-family:'Fraunces',serif;font-size:clamp(23px,4vw,38px);font-weight:600;l
 
 /* FAQ */
 .faq-list{display:flex;flex-direction:column;gap:8px;margin-top:24px}
-.faq-item{background:#111;border-radius:var(--rs);overflow:hidden}
-.faq-btn{width:100%;background:none;border:none;padding:19px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;font-size:15px;font-weight:700;color:#FFF;cursor:pointer;text-align:left;line-height:1.5;font-family:'Inter',sans-serif}
-.faq-icon{width:26px;height:26px;min-width:26px;border:1px solid rgba(255,255,255,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:rgba(255,255,255,.75);font-weight:300;transition:transform .3s ease;line-height:1;flex-shrink:0;user-select:none}
+.faq-item{background:var(--white);border-radius:var(--rs);overflow:hidden;box-shadow:var(--shadow)}
+.faq-btn{width:100%;background:none;border:none;padding:19px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:14px;font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;text-align:left;line-height:1.5;font-family:'Inter',sans-serif}
+.faq-icon{width:26px;height:26px;min-width:26px;border:1px solid rgba(0,0,0,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--soft);font-weight:300;transition:transform .3s ease;line-height:1;flex-shrink:0;user-select:none}
 .faq-btn.open .faq-icon{transform:rotate(45deg)}
-.faq-answer{overflow:hidden;max-height:0;transition:max-height .38s ease,padding .25s ease;padding:0 20px;font-size:14px;color:rgba(255,255,255,.75);line-height:1.85}
+.faq-answer{overflow:hidden;max-height:0;transition:max-height .38s ease,padding .25s ease;padding:0 20px;font-size:14px;color:var(--soft);line-height:1.85}
 .faq-answer.open{max-height:600px;padding:0 20px 22px;border-top:0}
 
-.fcta{background:var(--dark);color:#fff;text-align:center;padding:68px 24px}
+.fcta{background:var(--darkgrad);color:#fff;text-align:center;padding:68px 24px}
 .fcta h2{color:#fff}
 .fcta h2 em{color:#4ADE80}
 .fcta p{font-size:15px;color:rgba(255,255,255,.65);line-height:1.85;max-width:500px;margin:0 auto 12px}
@@ -383,14 +388,14 @@ footer a{color:rgba(255,255,255,.4);text-decoration:none}
     <p class="sl">O que muda depois</p>
     <h2>Ao terminar a formação, você vai ter clareza sobre algo que a maioria das pessoas nunca teve:</h2>
     <p class="sub"><em style="color:var(--green);font-weight:700">o seu próprio caminho.</em></p>
-    <div class="result-grid">
+    <div class="result-wrap"><div class="result-grid">
       <div class="result-item"><span class="result-check">✓</span><p><strong>Quais caminhos de renda online existem</strong>e qual faz mais sentido para o seu perfil — sem precisar testar tudo no escuro</p></div>
       <div class="result-item"><span class="result-check">✓</span><p><strong>Onde buscar clientes e oportunidades reais</strong>plataformas e sites usados por quem já recebe em moeda forte</p></div>
       <div class="result-item"><span class="result-check">✓</span><p><strong>Como começar sem largar o emprego</strong>construindo aos poucos, com segurança, até que faça sentido dar o próximo passo</p></div>
       <div class="result-item"><span class="result-check">✓</span><p><strong>Como viajar gastando muito menos</strong>destinos estratégicos, timing certo e hacks de quem já viaja trabalhando</p></div>
       <div class="result-item"><span class="result-check">✓</span><p><strong>Quais ferramentas usar para trabalhar de qualquer lugar</strong>setup, internet, rotina — o essencial para ser produtivo fora do escritório</p></div>
       <div class="result-item"><span class="result-check">✓</span><p><strong>Qual é o seu próximo passo concreto</strong>sem ficar paralisado sem saber por onde começar</p></div>
-    </div>
+    </div></div>
   </div>
 </section>
 
@@ -440,7 +445,7 @@ footer a{color:rgba(255,255,255,.4);text-decoration:none}
   <div class="c">
     <p class="sl">Bônus</p>
     <h2>Ao entrar agora, você ainda leva:</h2>
-    <div class="bonus-list">
+    <div class="bonus-wrap"><div class="bonus-list">
       <div class="bonus-card">
         <div class="bonus-mark">01</div>
         <div class="bonus-body"><div class="bonus-oldp">R$ 497</div><div class="bonus-badge">Incluso sem custo adicional</div><h3>Inglês Emergencial para Nômades</h3><p>O suficiente para se comunicar com clientes, passar pela imigração e viver no exterior — mesmo começando do zero em inglês.</p></div>
@@ -453,7 +458,7 @@ footer a{color:rgba(255,255,255,.4);text-decoration:none}
         <div class="bonus-mark">03</div>
         <div class="bonus-body"><div class="bonus-oldp">R$ 397</div><div class="bonus-badge">Incluso sem custo adicional</div><h3>Guia: Plataformas que Pagam em Dólar</h3><p>Lista curada de plataformas internacionais e um modelo de proposta para te ajudar a buscar o seu primeiro cliente.</p></div>
       </div>
-    </div>
+    </div></div>
   </div>
 </section>
 
